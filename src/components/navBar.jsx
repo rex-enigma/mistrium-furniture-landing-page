@@ -1,8 +1,19 @@
-import { drawer }
+import { drawerSvg, siteLogoSvg, searchSvg, baskeSvg, userSvg } from '../assets/svgImages';
+import styled from '@emotion/styled';
 
+const Container = styled.div`
+
+`;
 
 function NavBar() {
-        <div></div>
+       return(
+        <nav>
+          <div>
+
+          </div>
+          <div></div>  
+        </nav>
+       );
     }
 
 
