@@ -5,14 +5,15 @@ import styled from '@emotion/styled';
 const Container = styled.div`
 display:flex;
 color:blue;
-flex-direction:${props => props.column ? 'column': false}
+flex-direction:${props => props.column ? 'column' : false}
 `;
+
 
 function HomePage() {
 
     return (
         <div css={css`color:blue`}>
-            <Container column>home page</Container>
+            <Container column value={10}>home page</Container>
         </div>
     );
 }
@@ -21,7 +22,7 @@ function HomePage() {
 console.log(Container);
 
 
-  
+
 
 
 export default HomePage;
