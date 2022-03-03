@@ -17,7 +17,7 @@ import  ibmLogo from './images/ibm-logo';
 import  samsungLogo from './images/samsung-logo';
 import  stripeLogo from './images/stripe-logo';
 import  ramenStool from './images/ramen-stool';
-import  flexform from './images/drawer-icon';
+import  flexform from './images/flexform';
 import  amora from './images/amora';
 import  porada from './images/porada';
 import  liquidContract from './images/liquid-contract';
@@ -28,7 +28,7 @@ import  watchLinkImage from './images/image-1';
 import  heroImage from './images/image-0';
 
 
-export default {
+export  {
     drawerSvg,
     facebookSvg,
     instagramSvg,

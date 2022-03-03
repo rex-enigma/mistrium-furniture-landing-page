@@ -1,6 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import Layout from '../components/layout';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Container = styled.div`
 display:flex;
@@ -12,9 +14,14 @@ flex-direction:${props => props.column ? 'column' : false}
 function HomePage() {
 
     return (
-        <div css={css`color:blue`}>
-            <Container column value={10}>home page</Container>
+        // <Layout>
+        //     <main></main>
+        // </Layout>
+        <div>
+            hellow
+            <StaticImage src='../images/drawer-icon.svg'></StaticImage>
         </div>
+
     );
 }
 
