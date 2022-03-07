@@ -11,7 +11,7 @@ flex-direction:${props => props.column ? 'column' : false}
 `;
 
 const heroImage = css`
-left: 42px;
+left: 82px;
 width:323px;
 height: 176px;
 `;
@@ -21,7 +21,7 @@ function HomePage() {
 
     return (
         <Layout>
-            <main css={css`display: flex;justify-content: center;`}>
+            <main>
              <StaticImage css = {heroImage}  src ='../assets/images/hero-image.jpg'  />
             </main>
         </Layout>
