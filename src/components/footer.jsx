@@ -12,15 +12,16 @@ const Img = styled.img(props=>({
 
 const footerStyles = css`
 display: flex;
+align-items: center;
 `;
 
 function Footer() {
     return(
         <footer css = {footerStyles}> 
-          <Container >
+          <Container  position = {'relative'} top={'10px'} >
            <img width = {'125px'} height = {'29px'} src={siteLogoSvg} alt="mistrium logo" />
           </Container >
-          <Container leftAuto flexDirctn = 'column' label ='social-media-links' >
+          <Container leftAuto flexDirctn = 'column' label ='social-media-links'  margin = {'0px 9px 0px auto'} >
             <p>
                 follow us on!
             </p>

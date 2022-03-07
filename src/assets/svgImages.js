@@ -25,7 +25,7 @@ import  taknoin from './images/taknoin.jpg';
 import  rdFurniture from './images/residential-furniture.jpg';
 import  hpFurniture from './images/hp-furniture.jpg';
 import  watchLinkImage from './images/image-1.png';
-import  heroImage from './images/image-0.jpg';
+import  heroImage from './images/hero-image.jpg';
 
 export{
     drawerSvg,

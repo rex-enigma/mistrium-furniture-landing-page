@@ -1,17 +1,21 @@
 import React from "react";
 import NavBar from "./navBar";
 import Footer from './footer';
-import {css} from '@emotion/react';
+import {css, Global} from '@emotion/react';
 
-const AppBackground =  css`
-background-color: #FBFBFB;
+const AppGlobalStyle =  css`
+body{
+    margin:20px 0px 20px 9px;
+    p{margin:0px;}
+}
 `;
 
 
 function Layout(props) {
 
     return (
-        <div css = {AppBackground}>
+        <div>
+            <Global styles ={AppGlobalStyle}/>
             <NavBar />
             {props.children}
             <Footer/>
