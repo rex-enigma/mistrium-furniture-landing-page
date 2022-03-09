@@ -13,7 +13,6 @@ height: 176px;
 
 const font = css`
  font-family: 'Montserrat';
- font-weight: 'bold';
 `;
 
 
