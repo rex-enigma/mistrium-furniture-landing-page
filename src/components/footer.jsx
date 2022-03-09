@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import {css} from '@emotion/react';
 import { siteLogoSvg, facebookSvg, instagramSvg, youtubeSvg } from "../assets/svgImages";
-import { Container } from "./navBar";
+import Container from "./container";
 
 
 const Img = styled.img(props=>({
