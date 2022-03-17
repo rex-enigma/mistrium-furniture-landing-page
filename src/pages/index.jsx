@@ -6,13 +6,22 @@ import {headerData} from '../data';
 
 
 const heroImage = css`
-left: 82px;
-width:323px;
-height: 176px;
+//margin left auto doesnt work with StaticImage.
+//margin-left: auto;
+
+
+
 `;
 
-const font = css`
- font-family: 'Montserrat';
+const headTitleStyle = css`
+margin-bottom: 15px;
+
+`;
+
+const heroiImageWrapperStyle = css`
+ margin-top: 9px;
+ display: flex;
+ justify-content: flex-end;
 `;
 
 
@@ -21,11 +30,16 @@ function HomePage() {
     return (
         <Layout>
             <main>
-             <StaticImage css = {heroImage}  src ='../assets/images/hero-image.jpg' alt='header image'/>
+                <div css={heroiImageWrapperStyle}>
+                   <StaticImage css = {heroImage}  src ='../assets/images/hero-image.jpg' width={323} height={210} alt='header image'/> 
+                </div>
              <header>
-                 <h1 css= {font}>
+                 <h1 css= {headTitleStyle}>
                    {headerData.title}
                  </h1>
+                 <p>
+                     {headerData.subtitle}
+                 </p>
              </header>
             </main>
         </Layout>

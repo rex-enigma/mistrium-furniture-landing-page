@@ -21,11 +21,11 @@ function Footer() {
           <Container  position = {'relative'} top={'10px'} >
            <img width = {'125px'} height = {'29px'} src={siteLogoSvg} alt="mistrium logo" />
           </Container >
-          <Container leftAuto flexDirctn = 'column' label ='social-media-links'  margin = {'0px 9px 0px auto'} >
+          <Container flexDirctn = 'column' label ='social-media-links'  margin = {'0px 9px 0px auto'} >
             <p>
                 follow us on!
             </p>
-            <Container alignItems = 'center'>
+            <Container justifyContent='space-between' alignItems = 'center'>
                 <Img width = {'12px'} height = {'22px'} src={facebookSvg} alt="facebook logo" />
                 <Img width = {'25px'} height = {'25px'} src={instagramSvg} alt="instagram logo" />
                 <Img width = {'25px'} height = {'31px'} src={youtubeSvg} alt="youtube logo" />

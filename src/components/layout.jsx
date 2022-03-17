@@ -12,9 +12,24 @@ const globalStyle =  css`
     src: url(${geomanistRegular}) format('truetype');
 };
 
-html{
-    margin:10px 0px 20px 9px;
-    h1, p{margin:0px;}
+
+body{
+    margin:10px 0px 10px 9px;
+
+    h1, p{
+    margin:0px 14px 0px 0px;
+   }
+   
+   //using url font from google font apis (@import).
+   h1{font-family: Montserrat, roboto;}
+
+   p{
+      font-family: roboto;
+   }
+
+// using the local font after downloading it (@font-face).
+//    h1{font-family: geomanist}
+
 }
 `;
 

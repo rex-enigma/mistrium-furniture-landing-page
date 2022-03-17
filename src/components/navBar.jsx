@@ -7,7 +7,11 @@ import Container from './container'
 
 const navStyles = css`
  display: flex;
- margin-bottom: 20px;
+ position: fixed;
+ width: 100%;
+ z-index: 9999;
+top: 10px;
+
 `;
 
 
