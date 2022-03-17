@@ -15,7 +15,6 @@ const heroImage = css`
 
 const headTitleStyle = css`
 margin-bottom: 15px;
-
 `;
 
 const heroiImageWrapperStyle = css`
