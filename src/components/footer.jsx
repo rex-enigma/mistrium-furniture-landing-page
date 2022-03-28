@@ -1,14 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import {css} from '@emotion/react';
 import { siteLogoSvg, facebookSvg, instagramSvg, youtubeSvg } from "../assets/svgImages";
 import Container from "./container";
-
-
-const Img = styled.img(props=>({
-    width:props.width,
-    height:props.height,
-}));
 
 const footerStyles = css`
 display: flex;
@@ -26,9 +19,9 @@ function Footer() {
                 follow us on!
             </p>
             <Container justifyContent='space-between' alignItems = 'center'>
-                <Img width = {'12px'} height = {'22px'} src={facebookSvg} alt="facebook logo" />
-                <Img width = {'25px'} height = {'25px'} src={instagramSvg} alt="instagram logo" />
-                <Img width = {'25px'} height = {'31px'} src={youtubeSvg} alt="youtube logo" />
+                <img width = {'12px'} height = {'22px'} src={facebookSvg} alt="facebook logo" />
+                <img width = {'25px'} height = {'25px'} src={instagramSvg} alt="instagram logo" />
+                <img width = {'25px'} height = {'31px'} src={youtubeSvg} alt="youtube logo" />
             </Container>
           </Container>
         </footer>

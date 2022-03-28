@@ -1,5 +1,8 @@
 StaticImage src prop only works with static values eg './images/hero-image.jpg'.
-variable assigned to the src prop of the StaticImage component doesn't work either.
+
+variable assigned to the src prop of the StaticImage component doesn't work.
+
+margin left auto doesn't work with StaticImage directly.Wrap it on a flex container.
 
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
