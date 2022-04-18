@@ -6,6 +6,7 @@ import { headerData } from '../data';
 import Button from '../components/button';
 import Container from '../components/container';
 import ClientList from '../components/clients';
+import H4 from '../components/h4_heading';
 
 
 
@@ -15,14 +16,15 @@ const headerButtonSharedStyle = {
     fontWeight: 'bold',
 };
 
-const heroImageWrapperStyle = css`
- margin-top:30px;
- position: relative;
- right: -9px;
- display: flex;
- justify-content: flex-end;
+const heroImageWrapperStyle = {
+ marginTop: '30px',
+ position: 'relative',
+ right: '-9px',
+ display: 'flex',
+ justifyContent: 'flex-end',
+ label: 'heroImageWrapperStyle',
 
-`;
+};
 
 
 const styleCenter = css`
@@ -35,9 +37,9 @@ function HomePage() {
     return (
         <Layout>
             <main>
-                <div css={heroImageWrapperStyle}>
+                <Container {...heroImageWrapperStyle}>
                     <StaticImage src='../assets/images/hero-image.jpg' width={323} height={210} alt='header image' />
-                </div>
+                </Container>
                 <header>
                     <h1>
                         {headerData.title}
@@ -50,10 +52,9 @@ function HomePage() {
                     <Button {...headerButtonSharedStyle} borderWidth='0px' color='white' backgroundColor='var(--main-color)' >Request a Quote</Button>
                     <Button {...headerButtonSharedStyle} border='1px solid var(--main-color)' color='var(--main-color)' backgroundColor='white' border-color='var(--main-color)'>Watch Video</Button>
                 </Container>
-                <h4 css={styleCenter}>
-                    SOME OF OUR TRUSTED CLIENTS
-                </h4>
+                <H4>SOME OF OUR TRUSTED CLIENTS</H4>
                 <ClientList />
+                <H4>FEATURED PRODUCT</H4>
             </main>
         </Layout>
     );

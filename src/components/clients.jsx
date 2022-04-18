@@ -3,6 +3,9 @@ import { getImages, scrollXStyle } from './getImages';
 import { css } from '@emotion/react';
 
 
+const style = css`
+  margin-bottom: 49px;
+`;
 
 function Clients() {
 
@@ -14,7 +17,7 @@ function Clients() {
     );
   });
 
-  return <ul css={scrollXStyle}>{listItems}</ul>
+  return <ul css={[scrollXStyle, style]}>{listItems}</ul>
 
 }
 

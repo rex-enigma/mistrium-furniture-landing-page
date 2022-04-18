@@ -20,9 +20,12 @@ const globalStyle =  css`
 body{
     margin:10px 9px;
 
-    h1, h2, h3, h4, h5, h6, p{
+    h1, h2, h3, h4, h5, h6, p, ul{
     margin:0px 0px 15px 0px;
    }
+
+  
+
    
    //option 1
    //using url font from google font apis (@import).
