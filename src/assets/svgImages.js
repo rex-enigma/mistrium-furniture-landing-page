@@ -1,3 +1,4 @@
+ import arrowSvg from './images/arrow.svg'
 import  drawerSvg from './images/drawer-icon.svg';
 import  facebookSvg from './images/facebook.svg';
 import  instagramSvg from './images/instagram.svg';
@@ -16,18 +17,20 @@ import  googleLogo from './images/google-clientLogo.png';
 import  ibmLogo from './images/ibm-clientLogo.png';
 import  samsungLogo from './images/samsung-clientLogo.png';
 import  stripeLogo from './images/stripe-clientLogo.png';
-import  ramenStool from './images/ramen-stool.jpg';
-import  flexform from './images/flexform.jpg';
-import  amora from './images/amora.jpg';
-import  porada from './images/porada.jpg';
-import  liquidContract from './images/liquid-contract.jpg';
-import  taknoin from './images/taknoin.jpg';
-import  rdFurniture from './images/residential-furniture.jpg';
-import  hpFurniture from './images/hp-furniture.jpg';
+import  ramenStool from './images/ramen-stool.png';
+import  flexform from './images/flexform.png';
+import  amora from './images/amora.png';
+import  porada from './images/porada.png';
+import  liquidContract from './images/liquid-contract.png';
+import  taknoin from './images/taknoin.png';
+import  rdFurniture from './images/residential-featuredFurniture.png';
+import  hpFurniture from './images/hp-featuredFurniture.png';
 import  watchLinkImage from './images/image-1.png';
-import  heroImage from './images/hero-image.jpg';
+import  heroImage from './images/hero-image.png';
+
 
 export{
+    arrowSvg,
     drawerSvg,
     facebookSvg,
     instagramSvg,

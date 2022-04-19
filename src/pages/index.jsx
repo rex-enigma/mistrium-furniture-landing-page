@@ -7,7 +7,8 @@ import Button from '../components/button';
 import Container from '../components/container';
 import ClientList from '../components/clients';
 import H4 from '../components/h4_heading';
-
+import FeaturedPrds from '../components/featured_products';
+import { ProductOptions } from '../components/products';
 
 
 const headerButtonSharedStyle = {
@@ -17,30 +18,32 @@ const headerButtonSharedStyle = {
 };
 
 const heroImageWrapperStyle = {
- marginTop: '30px',
- position: 'relative',
- right: '-9px',
- display: 'flex',
- justifyContent: 'flex-end',
- label: 'heroImageWrapperStyle',
+    marginTop: '30px',
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    label: 'heroImageWrapperStyle',
 
 };
 
-
-const styleCenter = css`
- display: flex;
- justify-content: center;
+const LR9px = css`
+margin: 0px var(--margin-L-R);
 `;
 
 function HomePage() {
 
+    let CSS = css`
+        color: blue;
+    `;
+    console.log(CSS);
+
     return (
         <Layout>
-            <main>
+            <main css={css`margin-top: 60px;`}>
                 <Container {...heroImageWrapperStyle}>
-                    <StaticImage src='../assets/images/hero-image.jpg' width={323} height={210} alt='header image' />
+                    <StaticImage src='../assets/images/hero-image.png' width={323} height={210} alt='header image' />
                 </Container>
-                <header>
+                <header css={LR9px}>
                     <h1>
                         {headerData.title}
                     </h1>
@@ -54,7 +57,9 @@ function HomePage() {
                 </Container>
                 <H4>SOME OF OUR TRUSTED CLIENTS</H4>
                 <ClientList />
-                <H4>FEATURED PRODUCT</H4>
+                <H4>FEATURED PRODUCTS</H4>
+                <FeaturedPrds />
+                <ProductOptions />
             </main>
         </Layout>
     );

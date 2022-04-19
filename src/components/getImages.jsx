@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
 
 
 export const scrollXStyle = css`
@@ -24,51 +23,28 @@ scrollbar-width: none; //firefox
 `;
 
 
-function useImages() {
-
-    const data = useStaticQuery(graphql`
-      query  {
-        allFile {
-          edges {
-            node {
-              childImageSharp {
-                gatsbyImageData(layout: FIXED)
-              }
-              extension
-              relativePath
-            }
-          }
-        }
-      }
-      `);
-
-
-    return data;
-
-}
-
-// imageType: 'commentAvatar' or 'clientLogo'.
+// imageType: 'commentAvatar' or 'clientLogo' or 'featuredFurniture'.
 // useStaticQuery must be called on a react function component or a in a custom hook function
 // name of react function component must start with a capital letter.
 
-function GetImages(imageType) {
+function GetFilteredImages(imageType, images) {
 
-    let { allFile } = useImages();
-    const fileEdgeList = allFile.edges;
-
-
-    const filteredFileEdgeList = fileEdgeList.filter((fileEdge) => {
-        var imageRelativePath = fileEdge.node.relativePath;
-        return imageRelativePath.includes(imageType);
-    });
-
-    const imageList = filteredFileEdgeList.map((fileEdge) => {
-        var imageData = getImage(fileEdge.node);
-        return <GatsbyImage image={imageData} alt={fileEdge.node.relativePath} />
-    });
+  let { allFile } = images();
+  const fileEdgeList = allFile.edges;
 
 
-    return imageList
+  const filteredFileEdgeList = fileEdgeList.filter((fileEdge) => {
+    var imageRelativePath = fileEdge.node.relativePath;
+    return imageRelativePath.includes(imageType);
+  });
+
+  const imageList = filteredFileEdgeList.map((fileEdge) => {
+    var imageData = getImage(fileEdge.node);
+    return <GatsbyImage image={imageData} alt={fileEdge.node.relativePath} />
+  });
+
+
+  return imageList
 
 }
 
@@ -76,8 +52,8 @@ function GetImages(imageType) {
 
 //helper function
 
-export function getImages(imageType) {
-    return GetImages(imageType);
+export function getFilteredImages(imageType, images) {
+  return GetFilteredImages(imageType, images);
 }
 
 

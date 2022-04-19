@@ -1,11 +1,11 @@
 import React from "react";
 import NavBar from "./navBar";
 import Footer from './footer';
-import {css, Global} from '@emotion/react';
+import { css, Global } from '@emotion/react';
 import geomanistRegular from '../assets/fonts/geomanist-regular-webfont.ttf';
 
 
-const globalStyle =  css`
+const globalStyle = css`
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@700&display=swap');
 @font-face{
     font-family: 'geomanistregular';
@@ -14,17 +14,21 @@ const globalStyle =  css`
 
 :root {
 --main-color: #C4A586;
+--app-bg-color:#FBFBFB;
+--margin-L-R: 9px;  //margin left and right 
 }
 
 
 body{
-    margin:10px 9px;
+    background-color: var(--app-bg-color);
+    margin: 0px;
 
     h1, h2, h3, h4, h5, h6, p, ul{
     margin:0px 0px 15px 0px;
    }
 
-  
+
+
 
    
    //option 1
@@ -47,10 +51,10 @@ function Layout(props) {
 
     return (
         <div>
-            <Global styles ={globalStyle}/>
+            <Global styles={globalStyle} />
             <NavBar />
             {props.children}
-            <Footer/>
+            <Footer />
         </div>
     );
 }

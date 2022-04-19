@@ -1,6 +1,33 @@
 import React from 'react';
-import { getImages, scrollXStyle } from './getImages';
+import { getFilteredImages, scrollXStyle } from './getImages';
 import { css } from '@emotion/react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+
+
+
+function useImages() {
+
+  const data = useStaticQuery(graphql`
+      query  {
+        allFile {
+          edges {
+            node {
+              childImageSharp {
+                gatsbyImageData(layout: FIXED)
+              }
+              extension
+              relativePath
+            }
+          }
+        }
+      }
+      `);
+
+
+  return data;
+
+}
 
 
 const style = css`
@@ -9,7 +36,7 @@ const style = css`
 
 function Clients() {
 
-  let listItems = getImages('clientLogo').map((gatsbyImage, index) => {
+  let listItems = getFilteredImages('clientLogo', useImages).map((gatsbyImage, index) => {
     return (
       <li key={index} css={css`margin-left: 15px`}>
         {gatsbyImage}

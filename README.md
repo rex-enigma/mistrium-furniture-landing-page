@@ -1,4 +1,4 @@
-StaticImage src prop only works with static values eg './images/hero-image.jpg'.
+StaticImage src prop only works with static values(relative path) eg './images/hero-image.jpg'.
 
 variable assigned to the src prop of the StaticImage component doesn't work.
 
