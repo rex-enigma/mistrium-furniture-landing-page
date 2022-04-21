@@ -8,7 +8,7 @@ import Container from '../components/container';
 import ClientList from '../components/clients';
 import H4 from '../components/h4_heading';
 import FeaturedPrds from '../components/featured_products';
-import { ProductOptions } from '../components/products';
+import { Product } from '../components/products';
 
 
 const headerButtonSharedStyle = {
@@ -59,7 +59,7 @@ function HomePage() {
                 <ClientList />
                 <H4>FEATURED PRODUCTS</H4>
                 <FeaturedPrds />
-                <ProductOptions />
+                <Product />
             </main>
         </Layout>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
-import { getFilteredImages, scrollXStyle } from './getImages';
 import Container from './container';
 import H4 from './h4_heading';
 import { useStaticQuery, graphql } from 'gatsby';
 import { css } from '@emotion/react';
 import { arrowSvg } from '../assets/svgImages'
+import { productData } from '../data';
+import Button from './button';
+import { getFilteredImages } from './getImages';
 
 const optionStyle = styleProps => ({
     justifyContent: 'space-between',
@@ -38,7 +40,7 @@ function Products() {
 }
 
 
-export function ProductOptions() {
+function ProductOptions() {
     return (
         <Container flexDirctn='column' alignItems='center'>
             <Container {...optionStyle({ width: '80%' })} >
@@ -62,8 +64,51 @@ export function ProductOptions() {
 }
 
 
-function product() {
+function useImages() {
 
+    const data = useStaticQuery(graphql`
+          query  {
+            allFile {
+              edges {
+                node {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                  extension
+                  relativePath
+                }
+              }
+            }
+          }
+          `);
+
+
+    return data;
+
+}
+
+
+export function Product() {
+    let listItems = getFilteredImages('product', useImages).map((gatsbyImage, index) => {
+        return (
+            <Container flexDirctn='column' bgColor='#FFF4E8'>
+                <Button>
+                    <H4>Add To Cart</H4>
+                    <Container>
+                        <img src="" alt="" />
+                    </Container>
+                </Button>
+                <H4>{productData[index].name}</H4>
+                <Container>
+                    <H4>{productData[index].currentPrice}</H4>
+                    <H4>{productData[index].previousPrice}</H4>
+                </Container>
+                {gatsbyImage}
+            </Container>
+        );
+    });
+
+    return listItems;
 }
 
 

@@ -20,39 +20,39 @@ export const furnitureData = [
 
 export const productData = [
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Ramen Stool',
+        currentPrice:'$65.00',
+        previousPrice: '$95.00',
     
     },
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Flexform',
+        currentPrice:'$35.00',
+        previousPrice: '$55.00',
     
     },
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Porada',
+        currentPrice:'$87.00',
+        previousPrice: '$97.00',
     
     },
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Amora',
+        currentPrice:'$65.00',
+        previousPrice: '$95.00',
     
     },
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Taknion',
+        currentPrice:'$45.00',
+        previousPrice: '$55.00',
     
     },
     {
-        name: '',
-        currentPrice:'',
-        previousPrice: '',
+        name: 'Liquid Contract',
+        currentPrice:'$35.00',
+        previousPrice: '$45.00',
     
     },
 ];

@@ -23,7 +23,7 @@ scrollbar-width: none; //firefox
 `;
 
 
-// imageType: 'commentAvatar' or 'clientLogo' or 'featuredFurniture'.
+// imageType: 'commentAvatar' or 'clientLogo' or 'featuredFurniture' or product.
 // useStaticQuery must be called on a react function component or a in a custom hook function
 // name of react function component must start with a capital letter.
 

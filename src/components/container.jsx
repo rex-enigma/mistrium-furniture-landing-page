@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const Container = styled.div(props => ({
   display: 'flex',
   flexDirection: props.flexDirctn,
+  flexFlow: props.flexFlow,
   width: props.width,
   height: props.height,
   padding: props.padding,
