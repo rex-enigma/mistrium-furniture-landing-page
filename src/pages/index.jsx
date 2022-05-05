@@ -9,6 +9,7 @@ import ClientList from '../components/clients';
 import H4 from '../components/h4_heading';
 import FeaturedPrds from '../components/featured_products';
 import Products from '../components/products';
+import ProductOptions from '../components/product_options';
 
 
 const headerButtonSharedStyle = {
@@ -31,11 +32,6 @@ margin: 0px var(--margin-L-R);
 `;
 
 function HomePage() {
-
-    let CSS = css`
-        color: blue;
-    `;
-
     return (
         <Layout>
             <main css={css`margin-top: 60px;`}>
@@ -58,6 +54,8 @@ function HomePage() {
                 <ClientList />
                 <H4>FEATURED PRODUCTS</H4>
                 <FeaturedPrds />
+                <H4>PRODUCTS</H4>
+                <ProductOptions />
                 <Products />
             </main>
         </Layout>
