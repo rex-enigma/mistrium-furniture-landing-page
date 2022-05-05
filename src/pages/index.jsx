@@ -2,13 +2,13 @@ import React from 'react';
 import { css } from '@emotion/react';
 import Layout from '../components/layout';
 import { StaticImage } from 'gatsby-plugin-image';
-import { headerData } from '../data';
+import useHeaderData from '../custom_hooks/use_header_data';
 import Button from '../components/button';
 import Container from '../components/container';
 import ClientList from '../components/clients';
 import H4 from '../components/h4_heading';
 import FeaturedPrds from '../components/featured_products';
-import { Product } from '../components/products';
+import Products from '../components/products';
 
 
 const headerButtonSharedStyle = {
@@ -35,7 +35,6 @@ function HomePage() {
     let CSS = css`
         color: blue;
     `;
-    console.log(CSS);
 
     return (
         <Layout>
@@ -45,10 +44,10 @@ function HomePage() {
                 </Container>
                 <header css={LR9px}>
                     <h1>
-                        {headerData.title}
+                        {useHeaderData().title}
                     </h1>
                     <p>
-                        {headerData.subtitle}
+                        {useHeaderData().subtitle}
                     </p>
                 </header>
                 <Container label='headerButtons' justifyContent='space-around' marginBottom='48px'>
@@ -59,7 +58,7 @@ function HomePage() {
                 <ClientList />
                 <H4>FEATURED PRODUCTS</H4>
                 <FeaturedPrds />
-                <Product />
+                <Products />
             </main>
         </Layout>
     );

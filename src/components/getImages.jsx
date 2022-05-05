@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from '@emotion/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 
 
 export const scrollXStyle = css`
@@ -22,14 +22,18 @@ list-style-type: none;
 scrollbar-width: none; //firefox
 `;
 
+//use 'name' as key for retrieving data in map
 
-// imageType: 'commentAvatar' or 'clientLogo' or 'featuredFurniture' or product.
-// useStaticQuery must be called on a react function component or a in a custom hook function
+
+
+
+// imageType: 'commentAvatar' or 'clientLogo' or 'featuredFurniture' or 'product'.
+// useStaticQuery must be called on a react function component(function name start with a capital letter) or a in a custom hook function
 // name of react function component must start with a capital letter.
 
-function GetFilteredImages(imageType, images) {
+function GetFilteredImages(imageType) {
 
-  let { allFile } = images();
+  let { allFile } = useImages();
   const fileEdgeList = allFile.edges;
 
 

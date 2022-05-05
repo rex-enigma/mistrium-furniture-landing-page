@@ -1,115 +1,34 @@
 import React from 'react';
+import filterNodeImages from '../utils/filter_node_images';
+import useAllImgFiles from '../custom_hooks/use_all_img_files';
+import { useAllProductDataNode } from '../custom_hooks/use_all_product_data_node';
+import associateData from '../utils/associate_data';
+import Product from './product';
 import Container from './container';
-import H4 from './h4_heading';
-import { useStaticQuery, graphql } from 'gatsby';
-import { css } from '@emotion/react';
-import { arrowSvg } from '../assets/svgImages'
-import { productData } from '../data';
-import Button from './button';
-import { getFilteredImages } from './getImages';
 
-const optionStyle = styleProps => ({
-    justifyContent: 'space-between',
-    width: styleProps.width,
 
-});
-
-const arrowStyle = css`
-    position: absolute;
-    left: 50px;
-`;
-
-const productCartStyle = propsStyle => (
-    {
-        color: propsStyle.color || '#A9A7A6',
-        fontWeight: '400',
-        fontSize: '14px',
-    }
-);
-
-const productCartHeader = propsStyle => (
-    {
-        color: propsStyle.color || '#A9A7A6',
-        fontWeight: '500',
-        fontSize: '16px',
-    }
-);
+//useAllImageFies will return a object that contains allFile object that contains edges
+//which is a list that contains objects(fileEdges) each containing a node(image node).
+//Given an imagetype and allImgFiles, filteredNodeImages will return a list of filtered image nodes
+//that contain image data, this is gatsbyImageData,relativePath and name.
+//associateData returns a list of associatedData{image and its associated data(dataNode)}.
 
 function Products() {
+  let allImgFiles = useAllImgFiles();
+  let filteredProductNodeImages = filterNodeImages('product', allImgFiles);
+  let productDataNodes = useAllProductDataNode();
+  let productDataList = associateData(filteredProductNodeImages, productDataNodes)
+
+
+  let productList = productDataList.map((productData) => {
+    let productDataNode = productData.dataNode;
+    return <Product imageComponent={productData.gatsbyImgComponent} productDataNode={productDataNode} key={productDataNode.id} />;
+  });
+
+  return (<Container flexDirctn='column'> {productList} </Container>);
 
 }
 
 
-function ProductOptions() {
-    return (
-        <Container flexDirctn='column' alignItems='center'>
-            <Container {...optionStyle({ width: '80%' })} >
-                <H4 {...productCartHeader({})} >Best Selling</H4>
-                <H4 {...productCartHeader({})}>Most Popular</H4>
-                <Container position='relative'>
-                    <H4 {...productCartHeader({ color: '#3D3D3F' })} >See All</H4>
-                    <img css={arrowStyle} src={arrowSvg} width='24px' height='14px'></img>
-                    <Container marginLeft='15px' width='25px' height='15px' bgColor='#E9E9E9' />
-                </Container>
-            </Container>
-            <Container {...optionStyle({ width: '60%' })} >
-                <H4 {...productCartStyle({})} >All</H4>
-                <H4 {...productCartStyle({})} >Bed</H4>
-                <H4 {...productCartStyle({})} >Sofa</H4>
-                <H4 {...productCartStyle({ color: '#3D3D3F' })} >Chair</H4>
-                <H4 {...productCartStyle({})} >Light</H4>
-            </Container>
-        </Container>
-    );
-}
+export default Products
 
-
-function useImages() {
-
-    const data = useStaticQuery(graphql`
-          query  {
-            allFile {
-              edges {
-                node {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                  extension
-                  relativePath
-                }
-              }
-            }
-          }
-          `);
-
-
-    return data;
-
-}
-
-
-export function Product() {
-    let listItems = getFilteredImages('product', useImages).map((gatsbyImage, index) => {
-        return (
-            <Container flexDirctn='column' bgColor='#FFF4E8'>
-                <Button>
-                    <H4>Add To Cart</H4>
-                    <Container>
-                        <img src="" alt="" />
-                    </Container>
-                </Button>
-                <H4>{productData[index].name}</H4>
-                <Container>
-                    <H4>{productData[index].currentPrice}</H4>
-                    <H4>{productData[index].previousPrice}</H4>
-                </Container>
-                {gatsbyImage}
-            </Container>
-        );
-    });
-
-    return listItems;
-}
-
-
-export default Products;
