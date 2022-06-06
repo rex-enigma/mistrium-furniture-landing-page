@@ -7,6 +7,7 @@ import geomanistRegular from '../assets/fonts/geomanist-regular-webfont.ttf';
 
 const globalStyle = css`
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@700&display=swap');
+
 @font-face{
     font-family: 'geomanistregular';
     src: url(${geomanistRegular}) format('truetype');

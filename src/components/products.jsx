@@ -7,7 +7,13 @@ import Product from './product';
 import Container from './container';
 
 
-//useAllImageFies will return a object that contains allFile object that contains edges
+
+const productStyle = {
+  flexFlow: 'row wrap',
+  justifyContent: 'center',
+};
+
+//useAllImageFies will return an object that contains allFile object that contains edges
 //which is a list that contains objects(fileEdges) each containing a node(image node).
 //Given an imagetype and allImgFiles, filteredNodeImages will return a list of filtered image nodes
 //that contain image data, this is gatsbyImageData,relativePath and name.
@@ -25,7 +31,7 @@ function Products() {
     return <Product imageComponent={productData.gatsbyImgComponent} productDataNode={productDataNode} key={productDataNode.id} />;
   });
 
-  return (<Container flexDirctn='column'> {productList} </Container>);
+  return (<Container {...productStyle} > {productList} </Container>);
 
 }
 

@@ -32,11 +32,15 @@ const productCartHeader = propsStyle => (
     }
 );
 
-
+const productOptionsStyle = {
+    flexDirctn: 'column',
+    alignItems: 'center',
+    marginBottom: '42px',
+};
 
 function ProductOptions() {
     return (
-        <Container flexDirctn='column' alignItems='center'>
+        <Container {...productOptionsStyle}>
             <Container {...optionStyle({ width: '80%' })} >
                 <H4 {...productCartHeader({})} >Best Selling</H4>
                 <H4 {...productCartHeader({})}>Most Popular</H4>

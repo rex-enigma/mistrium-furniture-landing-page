@@ -16,6 +16,8 @@ const headerButtonSharedStyle = {
     width: '144px',
     height: '45px',
     fontWeight: 'bold',
+    justifyContent: 'center',
+    alignItems: 'center', 
 };
 
 const heroImageWrapperStyle = {

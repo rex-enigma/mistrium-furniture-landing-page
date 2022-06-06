@@ -9,6 +9,9 @@ import H4 from './h4_heading';
 import { css } from '@emotion/react';
 
 
+const style = css`
+  margin-bottom: 53px;
+`;
 
 
 function FeaturedPrds() {
@@ -30,7 +33,7 @@ function FeaturedPrds() {
     );
   });
 
-  return <Container css={scrollXStyle}>{featuredProductList}</Container>
+  return <Container css={[scrollXStyle, style]}>{featuredProductList}</Container>
 
 }
 

@@ -46,7 +46,7 @@ function Clients() {
   let clientImgList = filteredClientNodeImages.map(({ childImageSharp, relativePath, id }) => {
     let gatsbyImageData = getImage(childImageSharp);
     return (
-      <li key={id} css={css`margin-left: 10px; margin-right: 10px`}>
+      <li key={id} css={css`margin-left: 10px; margin-right: 10px;`}>
         <GatsbyImage image={gatsbyImageData} alt={relativePath} />
       </li>
     );

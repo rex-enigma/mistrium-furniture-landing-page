@@ -1,7 +1,7 @@
 import React from 'react';
 import { drawerSvg, siteLogoSvg, searchSvg, basketSvg, userSvg } from '../assets/svgImages';
 import { css } from '@emotion/react';
-import Container from './container'
+import Container from './container';
 
 
 const navStyles = css`
@@ -16,6 +16,7 @@ const navStyles = css`
 top: 0px;
 
 `;
+
 
 
 function NavBar() {

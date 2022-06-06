@@ -4,6 +4,7 @@ const Container = styled.div(props => ({
   display: 'flex',
   flexDirection: props.flexDirctn,
   flexFlow: props.flexFlow,
+  flexBasis: props.flexBasis,
   width: props.width,
   height: props.height,
   padding: props.padding,
@@ -20,6 +21,7 @@ const Container = styled.div(props => ({
   top: props.top,
   label: props.label,
   backgroundColor: props.bgColor,
+  borderRadius: props.borderRadius,
 }));
 
 
