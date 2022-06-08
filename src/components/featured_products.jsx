@@ -7,6 +7,7 @@ import scrollXStyle from '../shared_styles/scroll_x_axis';
 import Container from './container';
 import H4 from './h4_heading';
 import { css } from '@emotion/react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 
 const style = css`
@@ -28,7 +29,7 @@ function FeaturedPrds() {
           <H4>{featuredProductData.dataNode.name}</H4>
           <H4 fontSize='12px' fontWeight='600'>Browser Collection</H4>
         </Container>
-        {featuredProductData.gatsbyImgComponent}
+        <GatsbyImage image={getImage(featuredProductData.gatsbyImgNode)} alt = {featuredProductData.gatsbyImgNode.relativePath}/>
       </Container>
     );
   });

@@ -5,6 +5,7 @@ const Container = styled.div(props => ({
   flexDirection: props.flexDirctn,
   flexFlow: props.flexFlow,
   flexBasis: props.flexBasis,
+  flex: props.flex,
   width: props.width,
   height: props.height,
   padding: props.padding,
