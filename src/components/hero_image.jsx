@@ -1,23 +1,17 @@
 import React from "react";
-import Container from "./container";
 import { StaticImage } from "gatsby-plugin-image";
 
 
-const heroImageWrapperStyle = {
-    marginTop: '30px',
-    position: 'relative',
-    display: 'flex',
+const imgContStyleExternal = {
+    display:'flex',
     justifyContent: 'flex-end',
-    label: 'heroImageWrapperStyle',
-
+     marginTop: '-60px',
+     marginBottom: '-40px',
 };
-
 
 function HeroImage() {
     return (
-        <Container {...heroImageWrapperStyle}>
-            <StaticImage src='../assets/images/hero-image.png' width={323} height={210} alt='header image' />
-        </Container>
+        <StaticImage css={imgContStyleExternal} src ='../assets/images/hero-image.png' />
     );
 }
 

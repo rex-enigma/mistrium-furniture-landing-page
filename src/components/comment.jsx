@@ -17,7 +17,6 @@ const imgStyle = {
     clipPath: 'circle(20% at 56% 22%)',
     width: '132px',
     height:'136px',
-
 };
 
 //style the img wrapper <div><img></div>
@@ -25,6 +24,7 @@ const imgContStyle = {
     width: '132px',
     height:' 60px',
     marginBottom: '6px',
+    
     
 };
 
