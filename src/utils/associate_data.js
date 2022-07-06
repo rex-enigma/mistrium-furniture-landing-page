@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function associateData(filteredNodeImgs, dataNodes) {
   let associatedDataList = filteredNodeImgs.map((imgNode) => {
     let dataNode;

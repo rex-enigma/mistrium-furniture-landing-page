@@ -2,7 +2,7 @@ import React from 'react';
 import Container from './container';
 import H4 from './h4_heading';
 import { css } from '@emotion/react';
-import { arrowSvg } from '../assets/svgImages'
+import { arrowBlackSvg } from '../assets/svgImages'
 
 
 const optionStyle = styleProps => ({
@@ -46,7 +46,7 @@ function ProductOptions() {
                 <H4 {...productCartHeader({})}>Most Popular</H4>
                 <Container position='relative'>
                     <H4 {...productCartHeader({ color: '#3D3D3F' })} >See All</H4>
-                    <img css={arrowStyle} src={arrowSvg} width='24px' height='14px'></img>
+                    <img css={arrowStyle} src={arrowBlackSvg} width='24px' height='14px' alt='' />
                     <Container marginLeft='15px' width='25px' height='15px' bgColor='#E9E9E9' />
                 </Container>
             </Container>

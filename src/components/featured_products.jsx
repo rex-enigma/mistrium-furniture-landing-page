@@ -29,7 +29,7 @@ function FeaturedPrds() {
           <H4>{featuredProductData.dataNode.name}</H4>
           <H4 fontSize='12px' fontWeight='600'>Browser Collection</H4>
         </Container>
-        <GatsbyImage image={getImage(featuredProductData.gatsbyImgNode)} alt = {featuredProductData.gatsbyImgNode.relativePath}/>
+        <GatsbyImage image={getImage(featuredProductData.gatsbyImgNode)} imgStyle={{maxWidth: '200px', height:'auto'}}  alt = {featuredProductData.gatsbyImgNode.relativePath}/>
       </Container>
     );
   });

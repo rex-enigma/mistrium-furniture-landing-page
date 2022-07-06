@@ -1,5 +1,5 @@
 import React from 'react';
-import { drawerSvg, siteLogoSvg, searchSvg, basketSvg, userSvg } from '../assets/svgImages';
+import { drawerSvg, siteLogoSvg, searchSvg, basketBlackSvg, userSvg } from '../assets/svgImages';
 import { css } from '@emotion/react';
 import Container from './container';
 
@@ -28,7 +28,7 @@ function NavBar() {
       </Container>
       <Container width={'140px'} justifyContent='space-around' margin={'0px 0px 0px auto'} height={'26px'} >
         <img src={searchSvg} alt="search icon" />
-        <img src={basketSvg} alt="cart icon" />
+        <img src={basketBlackSvg} alt="cart icon" />
         <img src={userSvg} alt="user icon" />
       </Container>
     </nav>

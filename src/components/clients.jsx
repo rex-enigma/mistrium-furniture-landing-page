@@ -1,5 +1,4 @@
 import React from 'react';
-import useAllImgFiles from '../custom_hooks/use_all_img_files';
 import filterNodeImages from '../utils/filter_node_images';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { scrollXStyle } from '../shared_styles/scroll_x_axis';

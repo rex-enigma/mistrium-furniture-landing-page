@@ -4,6 +4,7 @@ const Button = styled.button((props)=>({
     display: 'flex',
     flexDirection: props.flexDirctn,
     flexFlow: props.flexFlow,
+    flex: props.flex,
     justifyContent: props.justifyContent,
     alignItems: props.alignItems,
     boxSizing:'border-box',
@@ -20,6 +21,9 @@ const Button = styled.button((props)=>({
     fontWeight:props.fontWeight,
     margin: props.margin,
     padding: props.padding,
+    position: props.position,
+    top: props.top,
+    boxSizing: props.boxSizing,
 
 }));
 

@@ -10,36 +10,38 @@ import H4 from '../components/h4_heading';
 import FeaturedPrds from '../components/featured_products';
 import Products from '../components/products';
 import ProductOptions from '../components/product_options';
+import  Comments  from '../components/comments';
+import HeaderButtons from '../components/header_buttons';
+import HeroImage from '../components/hero_image';
+import Form from '../components/form';
 
 
-const headerButtonSharedStyle = {
-    width: '144px',
-    height: '45px',
-    fontWeight: 'bold',
+const interiorButtStyle = {
+    border: '1.08px solid #FE8432',
+    borderRadius: '19.5px',
+    height: '44px',
     justifyContent: 'center',
-    alignItems: 'center', 
-};
-
-const heroImageWrapperStyle = {
-    marginTop: '30px',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    label: 'heroImageWrapperStyle',
+    alignItems: 'center',
+    color: '#FE8432',
+    backgroundColor: 'var(--app-bg-color)',
+    margin: '0px 0px 27px 12px',
+    padding:'0px 25px 0px 25px',
 
 };
 
 const LR9px = css`
-margin: 0px var(--margin-L-R);
+    margin: 0px var(--margin-L-R);
 `;
+
+const sharedColumnStyle = {
+    flexDirctn: 'column',
+};
 
 function HomePage() {
     return (
         <Layout>
             <main css={css`margin-top: 60px;`}>
-                <Container {...heroImageWrapperStyle}>
-                    <StaticImage src='../assets/images/hero-image.png' width={323} height={210} alt='header image' />
-                </Container>
+               <HeroImage/>
                 <header css={LR9px}>
                     <h1>
                         {useHeaderData().title}
@@ -49,21 +51,30 @@ function HomePage() {
                     </p>
                 </header>
                 <Container label='headerButtons' justifyContent='space-around' marginBottom='48px'>
-                    <Button {...headerButtonSharedStyle} borderWidth='0px' color='white' backgroundColor='var(--main-color)' >Request a Quote</Button>
-                    <Button {...headerButtonSharedStyle} border='1px solid var(--main-color)' color='var(--main-color)' backgroundColor='white' border-color='var(--main-color)'>Watch Video</Button>
+                    <HeaderButtons/>
                 </Container>
-                <H4>SOME OF OUR TRUSTED CLIENTS</H4>
-                <ClientList />
-                <H4>FEATURED PRODUCTS</H4>
-                <FeaturedPrds />
-                <H4>PRODUCTS</H4>
-                <ProductOptions />
-                <Products />
+                <Container {...sharedColumnStyle} label = 'our clients'>
+                    <H4>SOME OF OUR TRUSTED CLIENTS</H4>
+                    <ClientList />
+                </Container>
+                <Container {...sharedColumnStyle} label = 'featured products'>
+                    <H4>FEATURED PRODUCTS</H4>
+                    <FeaturedPrds />
+                </Container>
+                <Container {...sharedColumnStyle} label = 'products'>
+                    <H4>PRODUCTS</H4>
+                    <ProductOptions />
+                    <Products />
+                </Container>
+                <H4 css ={css`margin-top: 20px;font-size: 18px `} >Let's see what our customers say </H4>
+               <Comments />
+               <Button {...interiorButtStyle} >Mistrium Interior</Button>
+               <h2 css ={css`margin-left:12px; font-size: 30px;`}>Signup to receive updates about new products</h2>
+               <Form/>
             </main>
         </Layout>
     );
 }
-
 
 
 

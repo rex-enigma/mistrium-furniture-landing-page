@@ -27,9 +27,8 @@ function Products() {
 
 
   let productList = productDataList.map((productData) => {
-    console.log(productData);
     let productDataNode = productData.dataNode;
-    return <Product gatsbyImgNode={productData.gatsbyImgNode} productDataNode={productDataNode} key={productDataNode.id} />;
+    return <Product gatsbyImgNode={productData.gatsbyImgNode} productDataNode={productDataNode} key={productDataNode.id} />
   });
 
   return (<Container {...productStyle} > {productList} </Container>);

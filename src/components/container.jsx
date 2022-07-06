@@ -23,6 +23,7 @@ const Container = styled.div(props => ({
   label: props.label,
   backgroundColor: props.bgColor,
   borderRadius: props.borderRadius,
+  border: props.border,
 }));
 
 
